@@ -39,9 +39,15 @@ app.post("/api", (req,res)=>{
     })
 });
 app.put("/api", (req,res)=>{
+    
+    const index=products.findIndex(v=> v.id===2);
+
+    products[index]["price"]=99999;
+
     res.json({
         status:'ok',
-        message:'data successfully replaced'
+        message:'data successfully replaced',
+        data: products
     })
 });
 app.patch("/api", (req,res)=>{
