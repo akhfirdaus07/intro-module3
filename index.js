@@ -26,13 +26,16 @@ app.get("/api", (req,res)=>{
     })
 });
 app.post("/api", (req,res)=>{
-    const newProducts={
+    const newProduct={
         id:3,
+        name: "Pempek",
+        price: 50000
     }
-    products.push()
+    products.push(newProduct)
     res.json({
         status:'ok',
-        message:'data successfully created'
+        message:'new product has successfully created',
+        data: products
     })
 });
 app.put("/api", (req,res)=>{
