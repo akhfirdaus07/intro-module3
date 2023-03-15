@@ -39,10 +39,13 @@ app.post("/api", (req,res)=>{
     })
 });
 app.put("/api", (req,res)=>{
-    
+    const newProduct={
+        name: "Pempek",
+        price: 50000
+    }
     const index=products.findIndex(v=> v.id===2);
 
-    products[index]["price"]=99999;
+    products[index]=newProduct;
 
     res.json({
         status:'ok',
@@ -51,9 +54,13 @@ app.put("/api", (req,res)=>{
     })
 });
 app.patch("/api", (req,res)=>{
+    const index=products.findIndex(v=> v.id===2);
+
+    products[index]["price"]=99999;
     res.json({
         status:'ok',
-        message:'data successfully updated'
+        message:'data successfully updated',
+        data: products
     })
 });
 app.delete("/api", (req,res)=>{
