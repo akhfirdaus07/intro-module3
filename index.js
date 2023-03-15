@@ -14,7 +14,7 @@ let products=[
     },
     {
         id:2,
-        name: "Soto Banjar",
+        name: "Soto",
         price: 20000
     }
 ]
@@ -64,9 +64,14 @@ app.patch("/api", (req,res)=>{
     })
 });
 app.delete("/api", (req,res)=>{
+    const indexSoto=products.findIndex(v=> v.name==="Soto");
+
+    products.splice(indexSoto,1)
+
     res.json({
         status:'ok',
-        message:'data successfully deleted'
+        message:'data successfully deleted',
+        data: products
     })
 });
 
