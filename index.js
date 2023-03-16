@@ -11,5 +11,5 @@ const routes = require('./routes');
 app.use('/api', routes)
 
 app.listen(process.env.PORT, ()=>{
-    console.log(`server running on port ${PORT}....`);
+    console.log(`server running on port ${process.env.PORT}....`);
 });
